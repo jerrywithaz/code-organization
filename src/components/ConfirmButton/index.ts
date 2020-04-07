@@ -1,1 +1,2 @@
-export { default } from './ConfirmButton';
+export { ConfirmButtonProps } from './ConfirmButton.types';
+export { default } from './ConfirmButton.component';

@@ -1,3 +1,8 @@
-export function createHoverEffect(mouseEntered: boolean) {
+export function createButtonHoverEffect(mouseEntered: boolean) {
+    if (mouseEntered) {
 
+    }
+    else {
+
+    }
 }

@@ -7,3 +7,5 @@ export const ConfirmButton = styled(Button)<ConfirmButtonProps>`
         background: ${props.confirmed ? "red" : "blue"};
     `}
 `;
+
+ConfirmButton.displayName = "Styled.ConfirmButton";

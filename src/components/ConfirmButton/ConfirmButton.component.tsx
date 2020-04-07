@@ -4,7 +4,7 @@ import { ConfirmButtonProps } from './ConfirmButton.types';
 import * as Styled from './ConfirmButton.style';
 
 const ConfirmButton: FunctionComponent<ConfirmButtonProps> = ({
-    children,
+    children = null,
     confirmed,
     onConfirm,
     ...rest

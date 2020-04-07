@@ -1,34 +1,35 @@
 import React, { FunctionComponent } from 'react';
+import extractText from './../../utils/dom/extractText';
 import { ButtonProps } from './Button.types';
-import { createHoverEffect } from './Button.utils';
+import { createButtonHoverEffect } from './Button.utils';
+import ButtonAnimation from './components/ButtonAnimation';
 
 import * as Styled from './Button.style';
 
 const Button: FunctionComponent<ButtonProps> = ({
-    children,
+    children = null,
     type = "button",
     ...rest
 }: ButtonProps) => {
 
-    function onMouseEnter(
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) {
-        createHoverEffect(true);
+    function onMouseEnter(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        createButtonHoverEffect(true);
     }
 
-    function onMouseLeave(
-        e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) {
-        createHoverEffect(false);
+    function onMouseLeave(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        createButtonHoverEffect(false);
     }
-
+    
+    const text = extractText();
+    
     return (
         <Styled.Button 
             {...rest} 
             onMouseEnter={onMouseEnter} 
             onMouseLeave={onMouseLeave}
             type={type}>
-                <Styled.ButtonAnimation/>
+                <ButtonAnimation 
+                    animate={true}/>
                 <Styled.ButtonText>
                     {children}
                 </Styled.ButtonText>

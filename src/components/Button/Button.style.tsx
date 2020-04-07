@@ -5,10 +5,10 @@ export const Button = styled.button`
     border: 0;
 `;
 
+Button.displayName = "Styled.Button";
+
 export const ButtonText = styled.span`
     font-size: 20px;
 `;
 
-export const ButtonAnimation = styled.div`
-
-`;
+ButtonText.displayName = "Styled.ButtonText";
