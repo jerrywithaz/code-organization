@@ -4,6 +4,11 @@ import ReactRouterProvider from 'providers/ReactRouterProvider';
 import ApolloProvider from 'providers/ApolloProvider';
 import HomeView from 'views/HomeView';
 import UserView from 'views/UserView';
+import { 
+  BASE_PATH, 
+  HOME_PATH, 
+  USER_PATH 
+} from 'views/paths';
 
 function App() {
   return (
@@ -12,15 +17,15 @@ function App() {
         <Switch>
           <Route
             exact
-            path={"/"}
+            path={BASE_PATH}
             component={HomeView} />
           <Route
             exact
-            path={"/home"}
+            path={HOME_PATH}
             component={HomeView} />
           <Route
             exact
-            path={"/users/:id"}
+            path={USER_PATH}
             component={UserView} />
         </Switch>
       </ReactRouterProvider>
