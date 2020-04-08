@@ -1,4 +1,4 @@
-import { TUser } from "../../__generated__/graphql/types";
+import { TUser } from "__generated__/graphql/types";
 
 export type UsersListProps = {
     onUserClick: () => void

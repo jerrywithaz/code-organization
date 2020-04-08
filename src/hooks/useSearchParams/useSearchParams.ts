@@ -1,5 +1,6 @@
 import { Location, History } from 'history';
 import { parse, ParsedQuery } from 'query-string';
+import { useState } from 'react';
 
 /**
  * Parses the current `location` search query string.
@@ -8,7 +9,13 @@ import { parse, ParsedQuery } from 'query-string';
 function useSearchParams<Query extends ParsedQuery = {}>(
     location: Location<History.PoorMansUnknown>
 ): Query {
-    return parse(location.search) as Query;
+
+    const parsedQuery = parse(location.search) as Query;
+
+    const [ searchParams ] = useState<Query>(parsedQuery);
+
+    return searchParams;
+
 };
 
 export default useSearchParams;

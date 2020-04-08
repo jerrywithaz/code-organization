@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import extractText from './../../utils/dom/extractText';
+import extractText from 'utils/dom/extractText';
 import { ButtonProps } from './Button.types';
 import { createButtonHoverEffect } from './Button.utils';
 import ButtonAnimation from './components/ButtonAnimation';
