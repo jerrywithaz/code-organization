@@ -8,19 +8,25 @@ const UsersList: FunctionComponent<UsersListProps> = ({
     onUserClick
 }: UsersListProps) => {
 
-    const { data, error, loading } = useGetUsersList();
+    const { 
+        data: usersList, 
+        error: usersListError , 
+        loading: usersListLoading 
+    } = useGetUsersList();
     const [ 
         addUser, 
-        { 
-            data: addedUser , 
-            loading: addingUser 
-        }
+        addUserResult
     ] = useAddNewUser();
+    const {
+        data: addedUser, 
+        error: addedUserError , 
+        loading: addedUserLoading
+    } = addUserResult;
 
-    if (data) {
+    if (usersList) {
         return (
             <Styled.UsersList>
-                {data.users.map((user) => (
+                {usersList.users.map((user) => (
                     <Styled.User 
                         onClick={onUserClick}>
                             {user.name}
@@ -30,7 +36,7 @@ const UsersList: FunctionComponent<UsersListProps> = ({
         );
     }
     else {
-        return loading && !error ? <div>Loading</div> : <div>Error</div>;
+        return usersListLoading && !usersListError ? <div>Loading</div> : <div>Error</div>;
     }
 
 };
