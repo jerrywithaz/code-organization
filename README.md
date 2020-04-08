@@ -98,3 +98,7 @@ and to import it you just use:
 ```javascript
 import extractText from `utils/dom/extractText`;
 ```
+
+## Use folders to group similar modules or ideas
+
+I am a big believer in using folders to group similar modules together. I think that it makes it easier for future devs to find what they are looking for and as a result makes finding problem code faster. In this demo project you're notice in the `src` folder I have several folders on the root that group modules by their functionality. For example, the `views` folder is for the route views of the application. Each component in here displays a specific page. The `hook` folder is for reusable hooks that can be used throughout the project. The `providers` folder is for global application providers. The `utils` folder is self-explanatory however even in that folder I've broken down the modules into further categories such as `dom` for utils that operate on the dom.
