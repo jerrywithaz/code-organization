@@ -9,9 +9,7 @@ const HomeView: FunctionComponent<HomeViewProps> = ({
     location
 }: HomeViewProps) => {
 
-    const { 
-        code 
-    } = useSearchParams<HomeViewSearchParams>(location);
+    const { code } = useSearchParams<HomeViewSearchParams>(location);
 
     return (
         <Styled.HomeView>
