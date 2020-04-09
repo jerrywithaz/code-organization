@@ -5,14 +5,14 @@ import { UsersListQueryData, UsersListAddUserMutationData } from "./UsersList.ty
 /**
  * Uses the `USERS_LIST_QUERY` apollo query.
  */
-export function useGetUsersList() {
+export function useGetUsersListQuery() {
     return useQuery<UsersListQueryData>(USERS_LIST_QUERY);
 };
 
 /**
  * Uses the `USERS_LIST_ADD_USER_MUTATION` apollo mutation.
  */
-export function useAddNewUser() {
+export function useAddNewUserMutation() {
     return useMutation<UsersListAddUserMutationData>(USERS_LIST_ADD_USER_MUTATION, {
         notifyOnNetworkStatusChange: true,
         refetchQueries: [{ query: USERS_LIST_QUERY }]

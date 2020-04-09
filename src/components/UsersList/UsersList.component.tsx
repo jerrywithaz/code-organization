@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { useGetUsersList, useAddNewUser } from './UsersList.hooks';
+import { useGetUsersListQuery, useAddNewUserMutation } from './UsersList.hooks';
 import { UsersListProps } from './UsersList.types';
 
 import * as Styled from './UsersList.style';
@@ -12,11 +12,11 @@ const UsersList: FunctionComponent<UsersListProps> = ({
         data: usersListData, 
         error: usersListError , 
         loading: usersListLoading 
-    } = useGetUsersList();
+    } = useGetUsersListQuery();
     const [ 
         addUser, 
         addUserResult
-    ] = useAddNewUser();
+    ] = useAddNewUserMutation();
     const {
         data: addedUserData, 
         error: addedUserError , 
