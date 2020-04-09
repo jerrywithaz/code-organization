@@ -9,7 +9,7 @@ const UsersList: FunctionComponent<UsersListProps> = ({
 }: UsersListProps) => {
 
     const { 
-        data: usersList, 
+        data: usersListData, 
         error: usersListError , 
         loading: usersListLoading 
     } = useGetUsersList();
@@ -18,15 +18,15 @@ const UsersList: FunctionComponent<UsersListProps> = ({
         addUserResult
     ] = useAddNewUser();
     const {
-        data: addedUser, 
+        data: addedUserData, 
         error: addedUserError , 
         loading: addedUserLoading
     } = addUserResult;
 
-    if (usersList) {
+    if (usersListData) {
         return (
             <Styled.UsersList>
-                {usersList.users.map((user) => (
+                {usersListData.users.map((user) => (
                     <Styled.User 
                         onClick={onUserClick}>
                             {user.name}
