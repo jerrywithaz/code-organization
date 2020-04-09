@@ -1,8 +1,5 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ReactRouterProvider from 'providers/ReactRouterProvider';
-import ApolloProvider from 'providers/ApolloProvider';
-import AppProvider from 'providers/AppProvider';
 import HomeView from 'views/HomeView';
 import UserView from 'views/UserView';
 import {
@@ -10,6 +7,9 @@ import {
   HOME_PATH,
   USER_PATH
 } from 'views/paths';
+import ReactRouterProvider from './providers/ReactRouterProvider';
+import ApolloProvider from './providers/ApolloProvider';
+import AppProvider from './providers/AppProvider';
 
 function App() {
   return (
