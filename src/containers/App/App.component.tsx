@@ -10,26 +10,29 @@ import {
 import ReactRouterProvider from './providers/ReactRouterProvider';
 import ApolloProvider from './providers/ApolloProvider';
 import AppProvider from './providers/AppProvider';
+import AppWrapper from './components/AppWrapper';
 
 function App() {
   return (
     <ApolloProvider>
       <ReactRouterProvider>
         <AppProvider>
-          <Switch>
-            <Route
-              exact
-              path={BASE_PATH}
-              component={HomeView} />
-            <Route
-              exact
-              path={HOME_PATH}
-              component={HomeView} />
-            <Route
-              exact
-              path={USER_PATH}
-              component={UserView} />
-          </Switch>
+          <AppWrapper>
+            <Switch>
+              <Route
+                exact
+                path={BASE_PATH}
+                component={HomeView} />
+              <Route
+                exact
+                path={HOME_PATH}
+                component={HomeView} />
+              <Route
+                exact
+                path={USER_PATH}
+                component={UserView} />
+            </Switch>
+          </AppWrapper>
         </AppProvider>
       </ReactRouterProvider>
     </ApolloProvider>
