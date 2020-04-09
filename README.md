@@ -63,7 +63,7 @@ So, in `React` world your component should be defined in 1 file, your components
 
 ## Your modules should be explicit about what is pubicly available
 
-As I mentioned earlier, I am not a fan of just importing functions, types, or components from just anywhere. Even though our module systems allow us to do that I think that leads to confusion, hard-to-trace imports, errors and sloppy code. 
+As I mentioned earlier, I am not a fan of just importing functions, types, or components from just anywhere. Even though our module systems allow us to do that I think that leads to confusion, hard-to-trace imports, errors and sloppy code.
 
 What I like to do is create an `index.ts` file for each module I create whether it is a component or just a utility function. Then, I use that file to export what should be publicly available from that module.
 
